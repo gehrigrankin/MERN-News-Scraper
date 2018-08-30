@@ -1,6 +1,16 @@
 .Home {
-    background-color: hsl(0,0%,90%);
-    height: 100vh;
-    
-    margin-top: 3.25rem;
+    height: calc(100% - 3.25rem);
 }
+
+.Home .SearchForm {
+    height: 12.5%;
+}
+
+.Home .Container {
+    height: 87.5%;
+    
+    display: flex;
+
+    padding: 10px;
+}
+

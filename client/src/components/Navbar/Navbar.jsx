@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import "./Navbar.css";
 
 import "./Navbar.css";
 
 const Navbar = () => {
     return (
-        <nav className="navbar is-fixed-top is-success">
+        <nav className="navbar is-success">
             <div className="navbar-brand">
                 <Link className="navbar-item" to="/">
                     New york Times Scraper

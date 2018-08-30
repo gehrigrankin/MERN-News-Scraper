@@ -1,4 +1,7 @@
 .Field {
+    position: relative;
     background-color: white;
-    margin: 2rem;
+    bottom: 5px;
+
+    width: 100%;
 }
