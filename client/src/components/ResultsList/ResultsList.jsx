@@ -2,11 +2,32 @@ import React from 'react';
 
 import "./ResultsList.css";
 import Field from '../Container/Field';
+import Result from './Result'
 
-const ResultsList = () => {
+const ResultsList = props => {
     return (
         <Field classProp="ResultsList">
-            <p>Results List</p>
+          
+                <div className="Filters">
+                    <strong>Topic:</strong> {props.topic} &emsp;&emsp;
+                    <strong>From:</strong> {props.timeRange}
+                </div>
+
+                <div className="article-list">
+                    {props.results.map((article, index) => {
+                        return (
+                            <Result 
+                                key={index}
+                                title={article.title}
+                                description={article.description}
+                                author={article.author}
+                                date={article.date}
+                            />
+                        )
+                    })}
+                </div>
+                
+     
         </Field>
     )
 }

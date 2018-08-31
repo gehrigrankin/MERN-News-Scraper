@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Field.css';
 
-const Field = (props, {children}) => {
+const Field = (props) => {
     let mainDiv = "Field";
     
     if (props.classProp) {
@@ -11,7 +11,7 @@ const Field = (props, {children}) => {
 
     return (
         <div className={mainDiv}>
-            {children}
+            {props.children}
         </div>
     )
 }
