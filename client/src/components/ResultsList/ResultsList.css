@@ -4,11 +4,15 @@
     max-height: 100%;
 }
 
-.ResultsList .Filters {
+.ResultsList .filter-var {
     background-color: hsl(0,0%,85%);
     padding: 5px 0;
+
+    height: 5%;
 }
 
 .ResultsList .article-list {
     overflow: scroll;
+
+    height: 95%;
 }

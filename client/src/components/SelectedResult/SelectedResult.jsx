@@ -3,7 +3,7 @@ import Field from '../Container/Field';
 
 const SelectedResult = () => {
     return (
-        <Field>
+        <Field classProp="SelectedResult">
             <p>Selected Result</p>
         </Field>
     )

@@ -8,7 +8,7 @@ const ResultsList = props => {
     return (
         <Field classProp="ResultsList">
           
-                <div className="Filters">
+                <div className="filter-var">
                     <strong>Topic:</strong> {props.topic} &emsp;&emsp;
                     <strong>From:</strong> {props.timeRange}
                 </div>
