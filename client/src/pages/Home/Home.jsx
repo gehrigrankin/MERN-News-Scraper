@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 
 import "./Home.css"
 
+import API from "../../utils/API";
+
 import SearchForm from '../../components/SearchForm';
 import Container from '../../components/Container';
 import ResultsContainer from '../../components/ResultsContainer';
@@ -69,18 +71,43 @@ class Home extends Component {
         ],
         selectedResult: {},
         filters: {
-            searchTopic: "Most Popular",
-            timeRange: "Anytime"
+            searchTopic: "Intern",
+            startYear: "1900",
+            endYear: "1920"
         }
     }
 
     componentDidMount() {
     }
 
+    getArticles = () => {
+        API.getArticles({
+            q: this.state.filters.searchTopic,
+            start_year: this.state.filters.startYear,
+            end_year: this.state.filters.endYear
+        })
+            .then(res => {
+                console.log("RES", res);
+                this.setState(() => ({
+                    searchResults: res.data   
+                }))
+            })
+            .catch(err => console.log(err));
+    };
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        this.getArticles();
+        console.log("i made it")
+    };
+
     render() {
         return (
             <div className="Home">
-                <SearchForm className="SearchForm" />
+                <SearchForm 
+                    className="SearchForm" 
+                    submit={this.handleFormSubmit}
+                />
                 <Container className="Container">
                     {/* <SearchFilter /> */}
                     <ResultsContainer 

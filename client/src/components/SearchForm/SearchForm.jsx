@@ -4,7 +4,7 @@ import './SearchForm.css';
 
 import InputBox from '../InputBox';
 
-const SearchForm = () => {
+const SearchForm = (props) => {
     return (
         <form className="SearchForm">
 
@@ -12,7 +12,7 @@ const SearchForm = () => {
             <InputBox className="InputBox" label="Start Year" placeholder="2000" />
             <InputBox className="InputBox" label="End Year" placeholder="2018" />
 
-            <a className="button is-success">submit</a>
+            <a className="button is-success" type="submit" onClick={props.submit}>submit</a>
 
         </form>
     )
