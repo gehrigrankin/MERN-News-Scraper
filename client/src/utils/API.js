@@ -3,8 +3,11 @@ import filterParams from "./filterParams";
 
 export default {
   // Gets articles from the NYT API
+  // getArticles: function(params) {
+  //   return axios.get("/api/nyt", { params: filterParams(params) });
+  // },
   getArticles: function(params) {
-    return axios.get("/api/nyt", { params: filterParams(params) });
+    return axios.get("/api/nyt");
   },
   // Gets all saved articles
   getSavedArticles: function() {
