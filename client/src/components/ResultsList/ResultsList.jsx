@@ -18,10 +18,10 @@ const ResultsList = props => {
                         return (
                             <Result 
                                 key={index}
-                                title={article.title}
-                                description={article.description}
+                                title={article.headline}
+                                description={article.summary}
                                 author={article.author}
-                                date={article.date}
+                                date={article.time}
                             />
                         )
                     })}

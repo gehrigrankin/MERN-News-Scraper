@@ -2,43 +2,29 @@ const axios = require("axios");
 var cheerio = require("cheerio");
 const db = require("../models");
 
+
+let resultsArr = [];
+
 module.exports = {
     findAll: function (req, res) {
-        // const params = Object.assign({
-        //     api_key: "9b3adf57854f4a19b7b5782cdd6e427a"
-        // }, req.query );
-
-        // axios.get(
-        //     "https://api.nytimes.com/svc/search/v2/articlesearch.json", { params }
-        // )
-        //     .then(response => {
-        //         db.Article
-        //             .find()
-        //             .then(dbArticles =>
-        //                 res.json(response.data.response.docs)
-
-        //             )
-        //             .catch(err => res.status(422).json(err));
-        //     }
-        // );
-
         
             // First, we grab the body of the html with request
         axios.get("https://www.washingtonpost.com/opinions/the-posts-view/?utm_term=.ed2bd055905b")
         .then(function(response) {
             // Then, we load that into cheerio and save it to $ for a shorthand selector
             const $ = cheerio.load(response.data);
-            const resultsArr = [];
+            resultsArr = [];
         
             // Now, we grab every stor-body class, and do the following:
-            $(".story-list-story").each(function(i, element) {
+            $(".story-list-story").each(async function(i, element) {
                 // Save an empty result object
                 let result = {};
             
                 // Add the text and href of every link, and save them as properties of the result object
+                result.id = i;
                 result.headline = $(this)
                     .children(".story-body")
-                    .children("story-headline")
+                    .children(".story-headline")
                     .children("h3")
                     .children("a")
                     .text();
@@ -47,19 +33,53 @@ module.exports = {
                     .children(".story-description")
                     .children("p")
                     .text();
-                result.img = $(this)
+                result.time = $(this)
+                    .children(".col-lg-12")
+                    .children(".story-list-meta-social")
+                    .children(".story-list-meta")
+                    .children(".timestamp")
+                    .text();
+                result.src = $(this)
                     .children(".story-image")
                     .children("a")
-                    .attr("href")
+                    .attr("href");
 
+                
+                // result.fullDoc = getFullDoc(result.src)
+                    
+                // console.log(getFullDoc(result.src));
                 resultsArr.push(result)
+
+                await getFullDoc(result);
+
             });
 
-// If we were able to successfully scrape and save an Article, send a message to the client
+            // If we were able to successfully scrape and save an Article, send a message to the client
             res.json(resultsArr);
         })
         .catch(err => res.status(422).json(err));
       
+    },
+    findSelected: function (req, res) {
+        const id = req.params.id;
+        res.json(resultsArr[id])
+        
     }
 };
   
+async function getFullDoc(result){
+    return (
+        axios.get(result.src)
+        .then(function(response) {
+            const $ = cheerio.load(response.data);
+
+            delete result.summary;
+
+            $(".topper-headline").each(function(i, element) {
+                // result.headline =  $(this).children("h1").text()
+            })
+            resultsArr.push(result);
+        })
+        .catch(err => res.status(422).json(err))
+    )
+}

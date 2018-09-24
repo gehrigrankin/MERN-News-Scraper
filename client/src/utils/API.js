@@ -1,5 +1,5 @@
 import axios from "axios";
-import filterParams from "./filterParams";
+// import filterParams from "./filterParams";
 
 export default {
   // Gets articles from the NYT API

@@ -6,4 +6,8 @@ router
   .route("/")
   .get(nytController.findAll);
 
+router
+  .route("/:id")
+  .get(nytController.findSelected); 
+
 module.exports = router;
