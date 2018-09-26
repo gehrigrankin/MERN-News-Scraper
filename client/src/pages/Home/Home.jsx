@@ -128,13 +128,20 @@ class Home extends Component {
     };
 
     handleSelected = (event) => {
-        console.log(event.target.closest(".Result").props);
-        // this.setState(() => {
-        //     return {
-        //         selected: event.target.closest(".Result")
-        //     }
-        // })
+        const id = event.target.closest(".Result").dataset.id;
+        console.log(id);
 
+        API.getSelectedArticle(id)
+            .then(res => {
+                console.log("selected RES", res);
+
+                this.setState(() => {
+                    return {
+                        selectedResult: res.data
+                    }
+                })
+            })
+            .catch(err => console.log(err))
     }
 
     render() {

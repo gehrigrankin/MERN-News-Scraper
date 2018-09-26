@@ -9,6 +9,10 @@ export default {
   getArticles: function(params) {
     return axios.get("/api/nyt");
   },
+  getSelectedArticle: function(id){
+    console.log("ID:", id)
+    return axios.get("/api/nyt/" + id)
+  },
   // Gets all saved articles
   getSavedArticles: function() {
     return axios.get("/api/articles");

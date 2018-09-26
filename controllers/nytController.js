@@ -62,6 +62,7 @@ module.exports = {
     },
     findSelected: function (req, res) {
         const id = req.params.id;
+        console.log("ID", id)
         res.json(resultsArr[id])
         
     }

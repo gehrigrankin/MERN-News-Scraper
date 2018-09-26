@@ -4,10 +4,10 @@ import Field from '../Container/Field';
 import './SelectedResult.css'
 
 const SelectedResult = (props) => {
-    console.log(props.selected[0]);
+    console.log(props.selected);
 
-    const selected = props.selected[0] ? 
-    props.selected[0] : "";
+    const selected = props.selected ? 
+    props.selected : "";
         
 
     return (

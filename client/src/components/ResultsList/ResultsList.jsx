@@ -18,6 +18,7 @@ const ResultsList = props => {
                     return (
                         <Result 
                             key={index}
+                            id={index}
                             title={article.headline}
                             description={article.summary}
                             author={article.author}
