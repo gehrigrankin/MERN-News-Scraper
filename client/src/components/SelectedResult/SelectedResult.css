@@ -1,0 +1,26 @@
+.SelectedResult {
+    padding: 1.5rem 1rem;
+}
+
+.SelectedResult .header {
+    position: relative;
+    display: block;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+/* .SelectedResult .title {
+    float: left;
+} */
+/* .SelectedResult .time {
+    float: right;
+} */
+.SelectedResult .article {
+    display: block;
+}
+
+.SelectedResult hr{
+    margin: 1rem 0;
+
+    background-color: hsl(0,0%,90%);
+}

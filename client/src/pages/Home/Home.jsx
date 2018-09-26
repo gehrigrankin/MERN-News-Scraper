@@ -13,60 +13,84 @@ class Home extends Component {
     state = {
         searchResults: [
             {
+                id: 0,
                 topic: "Most Popular",
                 author: "Gehrig Rankin",
-                title: "Title of this article",
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
-                date: "07/22/1998"
+                headline: "Title of this article",
+                summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
+                time: "07/22/1998",
+                src: "http://www.facebook.com",
+                selected: true
             },
             {
+                id: 1,
                 topic: "Most Popular",
                 author: "Lizzy Richardson",
-                title: "Another article title",
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
-                date: "07/22/1923"
+                headline: "Another article title",
+                summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
+                time: "07/22/1923",
+                src: "http://www.facebook.com",
+                selected: false
             },
             {
+                id: 2,
                 topic: "Most Popular",
                 author: "Gehrig Rankin",
-                title: "Title of this article",
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
-                date: "07/22/1998"
+                headline: "Title of this article",
+                summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
+                time: "07/22/1998",
+                src: "http://www.facebook.com",
+                selected: false
             },
             {
+                id: 3,
                 topic: "Most Popular",
                 author: "Lizzy Richardson",
-                title: "Another article title",
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
-                date: "07/22/1923"
+                headline: "Another article title",
+                summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
+                time: "07/22/1923",
+                src: "http://www.facebook.com",
+                selected: false
             },
             {
+                id: 4,
                 topic: "Most Popular",
                 author: "Gehrig Rankin",
-                title: "Title of this article",
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
-                date: "07/22/1998"
+                headline: "Title of this article",
+                summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
+                time: "07/22/1998",
+                src: "http://www.facebook.com",
+                selected: false
             },
             {
+                id: 5,
                 topic: "Most Popular",
                 author: "Lizzy Richardson",
-                title: "Another article title",
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
-                date: "07/22/1923"
+                headline: "Another article title",
+                summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
+                time: "07/22/1923",
+                src: "http://www.facebook.com",
+                selected: false
             },
             {
+                id: 6,
                 topic: "Most Popular",
                 author: "Gehrig Rankin",
-                title: "Title of this article",
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
-                date: "07/22/1998"
+                headline: "Title of this article",
+                summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
+                time: "07/22/1998",
+                src: "http://www.facebook.com",
+                selected: false
             },
             {
+                id: 7,
                 topic: "Most Popular",
                 author: "Lizzy Richardson",
-                title: "Another article title",
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
-                date: "07/22/1923"
+                headline: "Another article title",
+                summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cumque nulla quas eos inventore atque, totam vitae ipsam accusantium, sequi laudantium maxime perferendis, veritatis quis. Labore expedita dolores harum veniam eos ipsum a aut voluptate consequuntur deserunt officia minima nisi, eius eveniet perspiciatis! Necessitatibus animi adipisci, consectetur, eius eligendi officia porro magni excepturi, nam vel eveniet dolor aliquam enim soluta? Consectetur dolore nam eum omnis ipsam, officia inventore qui, neque totam laborum maiores voluptate labore possimus quod recusandae aperiam ratione impedit non commodi modi numquam atque! Perspiciatis, ipsam ad, dolorem inventore commodi ab fuga impedit recusandae velit, reprehenderit tempore adipisci!",
+                time: "07/22/1923",
+                src: "http://www.facebook.com",
+                selected: false
             }
         ],
         selectedResult: {},
@@ -78,7 +102,12 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        this.getArticles();
+        // this.getArticles();
+        const selected = this.state.searchResults.filter(article => {
+            return article.selected === true
+        }) 
+
+        this.setState({ selectedResult: selected})
     }
 
     getArticles = () => {
@@ -98,6 +127,16 @@ class Home extends Component {
         // console.log("i made it")
     };
 
+    handleSelected = (event) => {
+        console.log(event.target.closest(".Result").props);
+        // this.setState(() => {
+        //     return {
+        //         selected: event.target.closest(".Result")
+        //     }
+        // })
+
+    }
+
     render() {
         return (
             <div className="Home">
@@ -112,6 +151,7 @@ class Home extends Component {
                         selected={this.state.selectedResult}
                         topic={this.state.filters.searchTopic}
                         timeRange={this.state.filters.timeRange}
+                        handleSelected={this.handleSelected}
                     />
                 </Container>
             </div>

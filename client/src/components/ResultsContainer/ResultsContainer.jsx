@@ -10,11 +10,13 @@ const ResultsContainer = (props) => {
         <div className="ResultsContainer">
             <ResultsList
                 results={props.results} 
-                selected={props.selectedResult}
                 topic={props.topic}
                 timeRange={props.timeRange}
+                handleSelected={props.handleSelected}
             />
-            <SelectedResult />
+            <SelectedResult 
+                selected={props.selected}
+            />
         </div>
     )
 }

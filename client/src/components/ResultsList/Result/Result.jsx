@@ -7,7 +7,7 @@ const Result = (props) => {
         props.description.substring(0,100) + "..." : null;
 
     return (
-        <div className="Result">
+        <div className="Result" onClick={props.handleSelected}>
             <p className="title is-5">
                 {props.title}
 
