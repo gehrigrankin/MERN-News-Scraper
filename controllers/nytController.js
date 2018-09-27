@@ -9,48 +9,73 @@ module.exports = {
     findAll: function (req, res) {
         
             // First, we grab the body of the html with request
-        axios.get("https://www.washingtonpost.com/opinions/the-posts-view/?utm_term=.ed2bd055905b")
+        axios.get("https://www.azcentral.com/")
         .then(function(response) {
             // Then, we load that into cheerio and save it to $ for a shorthand selector
             const $ = cheerio.load(response.data);
             resultsArr = [];
         
             // Now, we grab every stor-body class, and do the following:
-            $(".story-list-story").each(async function(i, element) {
+            $(".flm-asset-link").each(async function(i, element) {
                 // Save an empty result object
                 let result = {};
             
                 // Add the text and href of every link, and save them as properties of the result object
                 result.id = i;
+                
                 result.headline = $(this)
-                    .children(".story-body")
-                    .children(".story-headline")
-                    .children("h3")
-                    .children("a")
+                    .children(".flm-text-wrap")
+                    .children(".flm-hed")
                     .text();
-                result.summary = $(this)
-                    .children(".story-body")
-                    .children(".story-description")
-                    .children("p")
-                    .text();
+                result.topic = $(this)
+                    .children(".flm-text-wrap")
+                    .children(".js-asset-section")
+                    .text().trim();
                 result.time = $(this)
-                    .children(".col-lg-12")
-                    .children(".story-list-meta-social")
-                    .children(".story-list-meta")
-                    .children(".timestamp")
-                    .text();
-                result.src = $(this)
-                    .children(".story-image")
-                    .children("a")
-                    .attr("href");
+                    .children(".flm-text-wrap")
+                    .children(".flm-time-since-update")
+                    .text().replace("|", "").trim();
+                result.summary = $(this)
+                    .children(".flm-text-wrap")
+                    .children(".flm-summary")
+                    .text().trim();
+
+                
+                    
+                
+                // result.headline = $(this)
+                //     .children(".story-body")
+                //     .children(".story-headline")
+                //     .children("h3")
+                //     .children("a")
+                //     .text();
+                // result.summary = $(this)
+                //     .children(".story-body")
+                //     .children(".story-description")
+                //     .children("p")
+                //     .text();
+                // result.time = $(this)
+                //     .children(".col-lg-12")
+                //     .children(".story-list-meta-social")
+                //     .children(".story-list-meta")
+                //     .children(".timestamp")
+                //     .text();
+                // result.src = $(this)
+                //     .children(".story-image")
+                //     .children("a")
+                //     .attr("href");
 
                 
                 // result.fullDoc = getFullDoc(result.src)
                     
                 // console.log(getFullDoc(result.src));
-                resultsArr.push(result)
+                console.log(result)
 
-                await getFullDoc(result);
+                if (result.topic !== "") {
+                    resultsArr.push(result)
+                }
+
+                //await getFullDoc(result);
 
             });
 
