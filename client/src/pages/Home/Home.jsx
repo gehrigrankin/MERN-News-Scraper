@@ -24,6 +24,12 @@ class Home extends Component {
         this.getArticles();
     }
 
+    componentDidUpdate(){
+        if (this.state.searchResults == []){
+            this.getArticles();
+        }
+    }
+
     componentWillMount() {
         this.getArticles();
         const selected = this.state.searchResults.filter(article => {
