@@ -7,9 +7,11 @@ let resultsArr = [];
 
 module.exports = {
     findAll: function (req, res) {
+
+        const mainSrc = "https://www.azcentral.com";
         
             // First, we grab the body of the html with request
-        axios.get("https://www.azcentral.com/")
+        axios.get(mainSrc)
         .then(function(response) {
             // Then, we load that into cheerio and save it to $ for a shorthand selector
             const $ = cheerio.load(response.data);
@@ -39,31 +41,8 @@ module.exports = {
                     .children(".flm-text-wrap")
                     .children(".flm-summary")
                     .text().trim();
-
-                
-                    
-                
-                // result.headline = $(this)
-                //     .children(".story-body")
-                //     .children(".story-headline")
-                //     .children("h3")
-                //     .children("a")
-                //     .text();
-                // result.summary = $(this)
-                //     .children(".story-body")
-                //     .children(".story-description")
-                //     .children("p")
-                //     .text();
-                // result.time = $(this)
-                //     .children(".col-lg-12")
-                //     .children(".story-list-meta-social")
-                //     .children(".story-list-meta")
-                //     .children(".timestamp")
-                //     .text();
-                // result.src = $(this)
-                //     .children(".story-image")
-                //     .children("a")
-                //     .attr("href");
+                result.src = mainSrc + $(this)
+                    .attr("href");
 
                 
                 // result.fullDoc = getFullDoc(result.src)
@@ -75,7 +54,7 @@ module.exports = {
                     resultsArr.push(result)
                 }
 
-                //await getFullDoc(result);
+                await getFullDoc(result);
 
             });
 
@@ -100,9 +79,24 @@ async function getFullDoc(result){
             const $ = cheerio.load(response.data);
 
             delete result.summary;
+            
+            result.content = [];
+            result.links = [];
 
-            $(".topper-headline").each(function(i, element) {
-                // result.headline =  $(this).children("h1").text()
+            $(".p-text").each(function(i, element) {
+                result.content.push($(this).text())
+            })
+
+            $(".exclude-from-newsgate").children("a").each(function(i, element){
+                let linkText = $(this).text();
+                let linkSrc = $(this).attr("href");
+
+                const linkObj = {
+                    text: linkText,
+                    src: linkSrc
+                }
+
+                result.links.push(linkObj)
             })
             resultsArr.push(result);
         })

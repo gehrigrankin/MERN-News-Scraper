@@ -14,13 +14,17 @@ class Home extends Component {
         searchResults: [],
         selectedResult: {},
         filters: {
-            searchTopic: "Intern",
+            searchTopic: "Recent",
             startYear: "1900",
             endYear: "1920"
         }
     }
 
-    componentDidMount() {
+    componentDidMount(){
+        this.getArticles();
+    }
+
+    componentWillMount() {
         this.getArticles();
         const selected = this.state.searchResults.filter(article => {
             return article.selected === true

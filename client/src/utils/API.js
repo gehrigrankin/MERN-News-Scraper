@@ -10,7 +10,6 @@ export default {
     return axios.get("/api/nyt");
   },
   getSelectedArticle: function(id){
-    console.log("ID:", id)
     return axios.get("/api/nyt/" + id)
   },
   // Gets all saved articles

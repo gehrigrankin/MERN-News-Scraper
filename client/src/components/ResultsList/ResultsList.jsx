@@ -21,7 +21,7 @@ const ResultsList = props => {
                             id={index}
                             title={article.headline}
                             description={article.summary}
-                            author={article.author}
+                            topic={article.topic}
                             date={article.time}
                             handleSelected={props.handleSelected}
                         />

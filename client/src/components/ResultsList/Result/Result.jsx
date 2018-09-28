@@ -11,9 +11,10 @@ const Result = (props) => {
             <p className="title is-5">
                 {props.title}
 
-                <span className="time">
-                    - {props.date}
-                </span>
+                
+            </p>
+            <p className="time">
+               {props.topic} - {props.date}
             </p>
 
             <p className="description">{desc}</p>

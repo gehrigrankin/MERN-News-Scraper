@@ -9,17 +9,41 @@ const SelectedResult = (props) => {
     const selected = props.selected ? 
     props.selected : "";
         
+    const content = selected.content ? 
+    selected.content : [];
+
+    const links = selected.links ? 
+    selected.links : [];
 
     return (
         <Field classProp="SelectedResult has-text-left">
             <div className="header">
                 <p className="title">{selected.headline}</p>
-                <p className="time has-text-right">{selected.time}</p>
+                <p className="time has-text-right">{selected.topic} | {selected.time}</p>
             </div>
             <hr/>
 
             <div className="article">
-                {selected.summary}
+                {
+                    content.map((x, i) => {
+                        return (
+                            <p key={i}
+                                className="content-p"
+                            >
+                                {x}
+                            </p> 
+                        )
+                    })
+                }
+                <ul className="link-list">
+                {
+                    links.map((x, i) => {
+                        return (
+                            <li><a className="link" href={"https://www.azcentral.com" + x.src}>{x.text}</a></li>
+                        )
+                    })
+                }
+                </ul>
             </div>
         </Field>
     )
