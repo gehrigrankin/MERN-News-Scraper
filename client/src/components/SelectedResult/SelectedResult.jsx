@@ -39,7 +39,7 @@ const SelectedResult = (props) => {
                 {
                     links.map((x, i) => {
                         return (
-                            <li><a className="link" href={"https://www.azcentral.com" + x.src}>
+                            <li key={i}><a className="link" href={"https://www.azcentral.com" + x.src}>
                                 {x.text}
                             </a></li>
                         )

@@ -13,6 +13,7 @@ const SearchForm = (props) => {
             <InputBox className="InputBox" label="End Year" placeholder="2018" />
 
             <a className="button is-success" type="submit" onClick={props.submit}>submit</a>
+            <a className="button is-danger" type="submit" onClick={props.handleArticleSave}>submit</a>
 
         </form>
     )

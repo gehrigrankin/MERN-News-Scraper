@@ -25,7 +25,7 @@ class Home extends Component {
     }
 
     componentDidUpdate(){
-        if (this.state.searchResults == []){
+        if (this.state.searchResults === []){
             this.getArticles();
         }
     }
@@ -48,6 +48,12 @@ class Home extends Component {
                 })
             })
             .catch(err => console.log(err));
+    };
+
+    handleArticleSave = id => {
+        for (let article of this.state.searchResults){
+            API.saveArticle(article);
+        }
     };
 
     handleFormSubmit = event => {
@@ -78,6 +84,7 @@ class Home extends Component {
             <div className="Home">
                 <SearchForm 
                     className="SearchForm" 
+                    handleArticleSave={this.handleArticleSave}
                     submit={this.handleFormSubmit}
                 />
                 <Container className="Container">
@@ -90,10 +97,12 @@ class Home extends Component {
                         handleSelected={this.handleSelected}
                     />
                 </Container>
+
             </div>
         )
     }
 }
 
 export default Home;
+
 
