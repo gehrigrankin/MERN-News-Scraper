@@ -100,6 +100,6 @@ async function getFullDoc(result){
             })
             resultsArr.push(result);
         })
-        .catch(err => res.status(422).json(err))
+        .catch(err => result.status(422).json(err))
     )
 }
