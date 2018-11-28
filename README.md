@@ -6,4 +6,4 @@ This project is a current work in progress, yet my favorite application. It is n
 
 This app has pushed my knowledge of Javascript, React, and Backend Servers and Databases to a whole new level. I am excited to see where this project goes, I hope you enjoy.
 
-![alt text](http://url/to/img.png)
+(https://raw.githubusercontent.com/gehrigrankin/MERN-News-Scraper/images/Az-cen.png)
