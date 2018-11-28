@@ -10,9 +10,16 @@ export default {
     return axios.get("/api/nyt");
   },
   getSelectedArticle: function(id){
-    return axios.get("/api/nyt/" + id)
+    return axios.get("/api/articles/" + id)
   },
+  getScrapedArticle: function(id) {
+    return axios.get(`/api/articles/${id}/scraped`)
+  },
+  
   // Gets all saved articles
+  getAllArticles: function() {
+    return axios.get("/api/articles");
+  },
   getSavedArticles: function() {
     return axios.get("/api/articles");
   },
@@ -22,6 +29,9 @@ export default {
   },
   // Saves an article to the database
   saveArticle: function(articleData) {
+    console.log("=====================")
+    console.log(articleData)
+    console.log("=====================")
     return axios.post("/api/articles", articleData);
   }
 };

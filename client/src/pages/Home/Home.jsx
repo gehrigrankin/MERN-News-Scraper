@@ -40,7 +40,7 @@ class Home extends Component {
     }
 
     getArticles = () => {
-        API.getArticles()
+        API.getAllArticles()
             .then(res => {
                 console.log("RES", res.data);
                 this.setState({
@@ -50,11 +50,17 @@ class Home extends Component {
             .catch(err => console.log(err));
     };
 
-    handleArticleSave = id => {
+    handleArticleSave = () => {
         for (let article of this.state.searchResults){
             API.saveArticle(article);
         }
+        // API.saveArticle(this.state.searchResults[0]);
     };
+
+    // handleArticleSave = id => {
+    //     const article = this.state.articles.find(article => article._id === id);
+    //     API.saveArticle(article).then(res => this.getArticles());
+    // };
 
     handleFormSubmit = event => {
         // event.preventDefault();
@@ -63,6 +69,11 @@ class Home extends Component {
     };
 
     handleSelected = (event) => {
+        this.setState(() => {
+            return {
+                selectedResult: {} 
+            }
+        })
         const id = event.target.closest(".Result").dataset.id;
         console.log(id);
 
@@ -70,11 +81,16 @@ class Home extends Component {
             .then(res => {
                 console.log("selected RES", res);
 
-                this.setState(() => {
-                    return {
-                        selectedResult: res.data
+                API.getScrapedArticle(id).then(res => {
+                    if(res.data.id == id){
+                        this.setState(() => {
+                            return {
+                                selectedResult: res.data 
+                            }
+                        })
                     }
                 })
+
             })
             .catch(err => console.log(err))
     }

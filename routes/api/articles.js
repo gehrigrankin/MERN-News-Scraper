@@ -13,4 +13,8 @@ router
   .put(articleController.update)
   .delete(articleController.remove);
 
+router
+  .route("/:id/scraped")
+  .get(articleController.scrapeById)
+
 module.exports = router;
