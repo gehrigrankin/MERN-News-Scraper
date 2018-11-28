@@ -2,7 +2,7 @@ const db = require("../models");
 const axios = require("axios");
 var cheerio = require("cheerio");
 
-let returnResult = "fuck you";
+let returnResult = "";
 
 module.exports = {
     findAll: function(req, res){
